@@ -134,6 +134,7 @@ int main(void)
 		  HAL_GPIO_WritePin(GREEN_GPIO_Port,GREEN_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(FOTO_GPIO_Port, FOTO_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+      //add commit
 	  }
 	  if(distance >(set_range+gist) /* & ((duration/DIVIDER) <150)*/)
 	  {
