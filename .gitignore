@@ -1,8 +1,8 @@
 *.hex
-"103 sonic 3 timers.hex"
+103_sonic_3_timers.hex
 *.axf
 *.crf
 *.o
 *.htm
-*.dep
+*.dep 
 
