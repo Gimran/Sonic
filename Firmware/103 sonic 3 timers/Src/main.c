@@ -54,9 +54,9 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 volatile uint16_t duration=0, range=0, distance=0;
-volatile uint8_t catcher=0, devider=57;
-int set_range=350, gist=20;
-int ms_start=0, ms_current=0, ms_interval=500;
+volatile uint8_t catcher=0, devider=57, state_set;
+int set_range=350, gist=10;
+int ms_start=0, ms_current=0, ms_interval=800;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -121,6 +121,25 @@ int main(void)
 	HAL_Delay(3000);
 	HAL_TIM_Base_Start(&htim2);
 	HAL_TIM_Base_Start_IT(&htim2);
+
+  state_set |= HAL_GPIO_ReadPin(ch1_GPIO_Port,ch1_Pin);
+  state_set |= HAL_GPIO_ReadPin(ch2_GPIO_Port,ch2_Pin)<<1;
+  state_set |= HAL_GPIO_ReadPin(ch3_GPIO_Port,ch3_Pin)<<2;
+  state_set |= HAL_GPIO_ReadPin(ch4_GPIO_Port,ch4_Pin)<<3;
+
+  switch(state_set)
+  {
+    case 0xF: set_range=350; break;
+    case 0xE: set_range=300; break;
+    case 0xD: set_range=250; break;
+    case 0xB: set_range=200; break;
+	  case 0x7: set_range=150; break;
+    case 0x3: set_range=100; break;
+    case 0x1: set_range=50; break;
+    default: set_range=350;
+
+  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -359,7 +378,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = FOTO_Pin|RED_Pin|GREEN_Pin|ch4_Pin 
                           |ch3_Pin|ch2_Pin|ch1_Pin|GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 	

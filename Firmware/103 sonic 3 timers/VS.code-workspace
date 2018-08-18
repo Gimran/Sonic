@@ -4,5 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"main.h": "c",
+			"stm32f1xx_hal.h": "c",
+			"readme.c": "c"
+		}
+	}
 }
