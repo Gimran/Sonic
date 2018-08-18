@@ -130,11 +130,10 @@ int main(void)
   switch(state_set)
   {
     case 0xF: set_range=350; break;
-	  case 0xF: set_range=350; break;
     case 0xE: set_range=300; break;
     case 0xD: set_range=250; break;
     case 0xB: set_range=200; break;
-	  case 0x7: set_range=150; break;
+	case 0x7: set_range=150; break;
     case 0x3: set_range=100; break;
     case 0x1: set_range=50; break;
     default: set_range=350;
