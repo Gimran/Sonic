@@ -3,7 +3,6 @@
 "103 sonic 3 timers\main.o"
 "103 sonic 3 timers\stm32f1xx_it.o"
 "103 sonic 3 timers\stm32f1xx_hal_msp.o"
-"103 sonic 3 timers\handler.o"
 "103 sonic 3 timers\stm32f1xx_hal_gpio_ex.o"
 "103 sonic 3 timers\stm32f1xx_hal_tim.o"
 "103 sonic 3 timers\stm32f1xx_hal_tim_ex.o"
@@ -19,6 +18,6 @@
 "103 sonic 3 timers\stm32f1xx_hal_flash_ex.o"
 "103 sonic 3 timers\system_stm32f1xx.o"
 --library_type=microlib --strict --scatter "103 sonic 3 timers\103 sonic 3 timers.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "103 sonic 3 timers.map" -o "103 sonic 3 timers\103 sonic 3 timers.axf"
