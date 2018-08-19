@@ -137,6 +137,7 @@ int main(void)
     case 0x3: set_range=100; break;
     case 0x1: set_range=50; break;
     default: set_range=350;
+	  
 
   }
 
