@@ -123,12 +123,13 @@ int main(void)
 	HAL_TIM_Base_Start_IT(&htim2);
 
   state_set |= HAL_GPIO_ReadPin(ch1_GPIO_Port,ch1_Pin);
-  state_set |= HAL_GPIO_ReadPin(ch2_GPIO_Port,ch2_Pin)<<1;
+   state_set |= HAL_GPIO_ReadPin(ch2_GPIO_Port,ch2_Pin)<<1;
   state_set |= HAL_GPIO_ReadPin(ch3_GPIO_Port,ch3_Pin)<<2;
   state_set |= HAL_GPIO_ReadPin(ch4_GPIO_Port,ch4_Pin)<<3;
 
   switch(state_set)
   {
+	  
     case 0xF: set_range=350; break;
     case 0xE: set_range=300; break;
     case 0xD: set_range=250; break;
