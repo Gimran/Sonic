@@ -135,7 +135,7 @@ int main(void)
     case 0xB: set_range=200; break;
 	case 0x7: set_range=150; break;
     case 0x3: set_range=100; break;
-    case 0x1: set_range=50; break;
+    case 0x5: set_range=50; break;
     default: set_range=350;
 	  
 
